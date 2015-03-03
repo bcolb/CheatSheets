@@ -50,26 +50,12 @@ Hello world!
 
 ```java
 byte b = 37;
-```
-```java
 short s = 2027;
-```
-```java
 int number = 53617;
-```
-```java
 int long = 104701;
-```
-```java
 float f = 9.2f;
-```
-```java
 double pi = 3.14159;
-```
-```java
 boolean isAlive = true;
-```
-```java
 char c = 'a';
 ```
 ## Other Data Types <a name="otherdatatypes"></a>
