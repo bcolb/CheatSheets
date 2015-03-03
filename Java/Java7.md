@@ -73,7 +73,8 @@ String sentence = "This is just a test of the Java string system.";
 
 ## Reference Data Types
 Technically this refers to variables created using a defined constructor of their class, but here I'm just going over some more basic data types in Java that are not primitive data types.
-* **Arrays** - a container object that holds a fixed number of values of a *single* type. Array indices are zero-based. Below is an integer array of size ten.
+
+**Arrays** - a container object that holds a fixed number of values of a *single* type. Array indices are zero-based. Below is an integer array of size ten.
 ```java
 int[] numbers = new int[10];
 numbers[0] = 3;
@@ -85,7 +86,118 @@ String[] words = new String[64];
 words[0] = "Java";
 ```
 
-## Object-Oriented
+## Data Structures
+This is by no means an exhaustive list of Java data stru, just a few commonly used ones.
+
+ArrayList, LinkedList, HashMap
+
+## Operators
+Below is a list of operator precendence. For more details [check here](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html)
+
+| Operators            | Precedence                             |
+|----------------------|----------------------------------------|
+| postfix              | expr++ expr--                          |
+| unary                | ++expr --expr +expr -expr ~ !          |
+| multiplicative       | * / %                                  |
+| additive             | + -                                    |
+| shift                | << >> >>>                              |
+| relational           | < > <= >= instanceof                   |
+| equality             | == !=                                  |
+| bitwise AND          | &                                      |
+| bitwise exclusive OR | ^                                      |
+| bitwise inclusive OR | |                                      |
+| logical AND          | &&                                     |
+| logical OR           | ||                                     |
+| ternary              | ? :                                    |
+| assignment           | = += -= *= /= %= &= ^= |= <<= >>= >>>= |
+
+## Control Flow
+
+**if-then**
+
+```java
+boolean sunny = true;
+if(sunny) {
+  System.out.println("It is sunny outside, yay!");
+}
+```
+
+**if-then-else**
+
+```java
+boolean tired = false;
+if(tired) {
+  System.out.println("Go get some sleep.");
+} else {
+  System.out.println("Wanna grab a drink?");
+}
+```
+
+**switch**
+
+```java
+String dayString = "";
+int day = 3;
+switch (day) {
+  case 1: dayString = "Monday";
+          break;
+  case 2: dayString = "Tuesday";
+          break;
+  case 3: dayString = "Wednesday";
+          break;
+  case 4: dayString = "Thursday";
+          break;
+  case 5: dayString = "Friday";
+          break;
+  case 6: dayString = "Saturday";
+          break;
+  case 7: dayString = "Sunday";
+          break;
+  default: dayString = "Invalid Day";
+          break;
+}
+System.out.println(dayString);
+```
+
+**while loop**
+
+```java
+boolean done = false;
+int count = 0;
+while(!done) {
+  System.out.println(count);
+  count++;
+  if(count >= 10) done=true;
+}
+```
+
+**do-while**
+
+```java
+int count = 0;
+do {
+  count++;
+} while(count < 5);
+```
+
+**for loop**
+
+```java
+int[] numbers = new int[10];
+for(int i = 0; i < numbers.length; i++) {
+  System.out.println(numbers[i]);
+}
+```
+
+**for-each loop**
+```java
+int[] nums = new int[22];
+for(int n: nums) {
+  System.out.println(n);
+}
+```
+
+## Object-Oriented Explained
 Java is a **class-based** object-oriented programming language. Each file represents a single class, and the filename and class name much match (i.e. filename=HelloWorld.java, classname=HelloWorld). Java **classes** are basically templates that describe the behavior and states that objects of its type support. Individual **objects** are instances of classes with specific states and behaviors. For instance, a robot might be stopped or in motion (state) and be able to move forward to go backwards (behavior). Each class can contain **methods** which correspond to behaviors (i.e. move forward). Classes also define **fields**, which can be used to store the state of objects of its type once instantiated.
 
 Here is an example **Person.java**
@@ -179,3 +291,7 @@ public class Person {
 ## References
 
 * [Java 7 API](http://docs.oracle.com/javase/7/docs/api/overview-summary.html)
+
+## Recommended Sites
+
+* [Coding Bat](http://codingbat.com/)
