@@ -40,38 +40,38 @@ Hello world!
 
 ## Primitive Data Types <a name="primitive"></a>
 * **byte** - an 8-bit signed two's complement integer with range -128 to 127 inclusive (default = 0).
+* **short** - a 16-bit signed two's complement integer with range -32,768 to 32,767 inclusive (default = 0).
+* **int** - a 32-bit signed two's complement integer with range -2^31 to (2^31)-1 inclusive (default = 0).
+* **long** - a 64-bit signed two's complement integer with a range of -2^63 to (2^64)-1 inclusive (Java 8 supports it as unsigned as well) (default = 0L).
+* **float** - a single-precision 32-bit IEEE 754 floating point (note: in Java decimals default to the **double** type, hence the use of *f* to denote a float) (default = 0.0f).
+* **double** - a double-precision 64-bit IEEE 754 floating point (the default data type for decimals) (default = 0.0d).
+* **boolean** - has only two possible values, **true** or **false** and represents 1-bit of data (default = false).
+* **char** - a single 16-bit Unicode character with a minimum value of '\u0000' or 0 and a maximum value of 'u\ffff' or 65,535 inclusive (default = '\u0000').
+
 ```java
 byte b = 37;
 ```
-* **short** - a 16-bit signed two's complement integer with range -32,768 to 32,767 inclusive (default = 0).
 ```java
 short s = 2027;
 ```
-* **int** - a 32-bit signed two's complement integer with range -2^31 to (2^31)-1 inclusive (default = 0).
 ```java
 int number = 53617;
 ```
-* **long** - a 64-bit signed two's complement integer with a range of -2^63 to (2^64)-1 inclusive (Java 8 supports it as unsigned as well) (default = 0L).
 ```java
 int long = 104701;
 ```
-* **float** - a single-precision 32-bit IEEE 754 floating point (note: in Java decimals default to the **double** type, hence the use of *f* to denote a float) (default = 0.0f).
 ```java
 float f = 9.2f;
 ```
-* **double** - a double-precision 64-bit IEEE 754 floating point (the default data type for decimals) (default = 0.0d).
 ```java
 double pi = 3.14159;
 ```
-* **boolean** - has only two possible values, **true** or **false** and represents 1-bit of data (default = false).
 ```java
 boolean isAlive = true;
 ```
-* **char** - a single 16-bit Unicode character with a minimum value of '\u0000' or 0 and a maximum value of 'u\ffff' or 65,535 inclusive (default = '\u0000').
 ```java
 char c = 'a';
 ```
-
 ## Other Data Types <a name="otherdatatypes"></a>
 Some data types, such as strings, are represented as objects in Java.
 ```java
