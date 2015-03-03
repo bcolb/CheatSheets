@@ -1,12 +1,19 @@
 # Java 7 Cheat Sheet
 This is not a *getting started* guide, just a quick-reference for those that are a bit rusty in Java or that haven't coded in it recently (hence why I'm writing this).
 
-## Summary
+## Contents
+* [Summary](#summary)
+* [Hello World](#helloworld)
+* [Primitive Data Types (i.e. int, char)](#primitive)
+* [Other Data Types (i.e. String)](#otherdatatypes)
+* [Reference Data Types (i.e. arrays)](#referencedatatypes)
+
+## Summary <a name="summary"></a>
 Java is a class-based **object-oriented** programming language. It is designed to let engineers *write once, run anywhere*. Java programs can be run on any system or platform that supports Java (*most* do), without needing to be recompiled. 
 
 Java programs compile to **Java bytecode**, which can then run on any **Java Virtual Machine** (JVM). Much of Java, including its syntax, is based on **C** and **C++**. Java is **statically type**, which means that variables must be declared before they can be used.
 
-## Hello World
+## Hello World <a name="helloworld"></a>
 filename: **HelloWorld.java**
 ```java
 public class HelloWorld {
@@ -31,7 +38,7 @@ output:
 Hello world!
 ```
 
-## Primitive Data Types
+## Primitive Data Types <a name="primitive"></a>
 * **byte** - an 8-bit signed two's complement integer with range -128 to 127 inclusive (default = 0).
 ```java
 byte b = 37;
@@ -65,13 +72,13 @@ boolean isAlive = true;
 char c = 'a';
 ```
 
-## Other Data Types
+## Other Data Types <a name="otherdatatypes"></a>
 Some data types, such as strings, are represented as objects in Java.
 ```java
 String sentence = "This is just a test of the Java string system.";
 ```
 
-## Reference Data Types
+## Reference Data Types <a name="referencedatatypes"></a>
 Technically this refers to variables created using a defined constructor of their class, but here I'm just going over some more basic data types in Java that are not primitive data types.
 
 **Arrays** - a container object that holds a fixed number of values of a *single* type. Array indices are zero-based. Below is an integer array of size ten.
@@ -198,7 +205,7 @@ for(int n: nums) {
 ```
 
 ## Object-Oriented Explained
-Java is a **class-based** object-oriented programming language. Each file represents a single class, and the filename and class name much match (i.e. filename=HelloWorld.java, classname=HelloWorld). Java **classes** are basically templates that describe the behavior and states that objects of its type support. Individual **objects** are instances of classes with specific states and behaviors. For instance, a robot might be stopped or in motion (state) and be able to move forward to go backwards (behavior). Each class can contain **methods** which correspond to behaviors (i.e. move forward). Classes also define **fields**, which can be used to store the state of objects of its type once instantiated.
+Java is a **class-based** object-oriented programming language. Each file represents a single class, and the filename and class name must match (i.e. filename=HelloWorld.java, classname=HelloWorld). Java **classes** are basically templates that describe the behavior and states that objects of its type support. Individual **objects** are instances of classes with specific states and behaviors. For instance, a robot might be stopped or in motion (state) and be able to move forward to go backwards (behavior). Each class can contain **methods** which correspond to behaviors (i.e. move forward). Classes also define **fields**, which can be used to store the state of objects of its type once instantiated.
 
 Here is an example **Person.java**
 ```java
