@@ -11,7 +11,7 @@ This is not a *getting started* guide, just a quick-reference for those that are
 ## Summary <a name="summary"></a>
 Java is a class-based **object-oriented** programming language. It is designed to let engineers *write once, run anywhere*. Java programs can be run on any system or platform that supports Java (*most* do), without needing to be recompiled. 
 
-Java programs compile to **Java bytecode**, which can then run on any **Java Virtual Machine** (JVM). Much of Java, including its syntax, is based on **C** and **C++**. Java is **statically type**, which means that variables must be declared before they can be used.
+Java programs compile to **Java bytecode**, which can then run on any **Java Virtual Machine** (JVM). Much of Java, including its syntax, is based on **C** and **C++**. Java is **statically typed**, which means that variables must be declared before they can be used.
 
 ## Hello World <a name="helloworld"></a>
 filename: **HelloWorld.java**
@@ -86,17 +86,64 @@ Technically this refers to variables created using a defined constructor of thei
 int[] numbers = new int[10];
 numbers[0] = 3;
 numbers[1] = 29;
-```
+``` 
 Here is a String array size 64.
 ```java
 String[] words = new String[64];
 words[0] = "Java";
 ```
 
-## Data Structures
-This is by no means an exhaustive list of Java data stru, just a few commonly used ones.
+## Lists
 
-ArrayList, LinkedList, HashMap
+You can define your own lists in Java, here we're just covering use of the ArrayList and LinkedList available from the Java API.
+### ArrayList
+The ArrayList needs to be imported.
+```java
+import java.util.ArrayList;
+```
+
+```java
+ArrayList<String> al = new ArrayList();
+al.add("Ginny");
+al.add("Ron");
+al.add("Fred");
+al.add(2, "George");
+String name = al.get(0);
+int s = al.size();
+```
+Full details available from [the Java API](http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html).
+
+## LinkedList
+The LinkedList data structure needs to be imported.
+```java
+import java.util.LinkedList;
+```
+
+```java
+LinkedList<Integer> ll = new LinkedList<Integer>();
+ll.add(1);
+ll.add(3);
+ll.add(4);
+ll.add(1, 2);
+ll.remove(0);
+ll.clear();
+```
+Full details available from [the Java API](http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html).
+
+## HashMap
+Stores key/value pairs.
+```java
+import java.util.HashMap;
+```
+```java
+HashMap<String, Integer> hmap = new HashMap<String, Integer>();
+hmap.put("Ron", 16);
+hmap.put("Harry", 16);
+hmap.put("Hermione", 16);
+hmap.put("Ginny", 15);
+hmap.get("Harry");
+```
+Full details available from [the Java API](http://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html)
 
 ## Operators
 Below is a list of operator precendence. For more details [check here](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html)
