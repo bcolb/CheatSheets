@@ -81,9 +81,9 @@ String[] words = new String[64];
 words[0] = "Java";
 ```
 
-## Lists and Data Structures <a name="datastructures"></a>
+##Data Structures <a name="datastructures"></a>
 
-You can define your own lists in Java, here we're just covering use of the ArrayList and LinkedList available from the Java API.
+A select few data structures that might come in handy.
 
 ### ArrayList
 The ArrayList needs to be imported.
@@ -102,7 +102,7 @@ int s = al.size();
 ```
 Full details available from [the Java API](http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html).
 
-## LinkedList
+### LinkedList
 The LinkedList data structure needs to be imported.
 ```java
 import java.util.LinkedList;
@@ -119,7 +119,7 @@ ll.clear();
 ```
 Full details available from [the Java API](http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html).
 
-## HashMap
+### HashMap
 Stores key/value pairs.
 ```java
 import java.util.HashMap;
@@ -133,6 +133,21 @@ hmap.put("Ginny", 15);
 hmap.get("Harry");
 ```
 Full details available from [the Java API](http://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html)
+
+### TreeSet
+This is a sorted set that will probably come in handy.
+```java
+import java.util.TreeSet;
+```
+
+```java
+TreeSet<Integer> ts = new TreeSet<Integer>();
+ts.add(2314);
+ts.add(-239);
+ts.add(908);
+```
+
+More details on the TreeSet can be [found via the Java API](http://docs.oracle.com/javase/7/docs/api/java/util/TreeSet.html).
 
 ## Operators
 Below is a list of operator precendence. For more details [check here](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html)
