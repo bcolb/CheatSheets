@@ -7,6 +7,8 @@ This is not a *getting started* guide, just a quick-reference for those that are
 * [Primitive Data Types (i.e. int, char)](#primitive)
 * [Other Data Types (i.e. String)](#otherdatatypes)
 * [Reference Data Types (i.e. arrays)](#referencedatatypes)
+* [Data Structures (i.e. lists)](#datastructures)
+* [Object-Oriented](#objectoriented)
 
 ## Summary <a name="summary"></a>
 Java is a class-based **object-oriented** programming language. It is designed to let engineers *write once, run anywhere*. Java programs can be run on any system or platform that supports Java (*most* do), without needing to be recompiled. 
@@ -79,9 +81,10 @@ String[] words = new String[64];
 words[0] = "Java";
 ```
 
-## Lists
+## Lists and Data Structures <a name="datastructures"></a>
 
 You can define your own lists in Java, here we're just covering use of the ArrayList and LinkedList available from the Java API.
+
 ### ArrayList
 The ArrayList needs to be imported.
 ```java
@@ -237,7 +240,7 @@ for(int n: nums) {
 }
 ```
 
-## Object-Oriented Explained
+## Object-Oriented Explained <a name="objectoriented"></a>
 Java is a **class-based** object-oriented programming language. Each file represents a single class, and the filename and class name must match (i.e. filename=HelloWorld.java, classname=HelloWorld). Java **classes** are basically templates that describe the behavior and states that objects of its type support. Individual **objects** are instances of classes with specific states and behaviors. For instance, a robot might be stopped or in motion (state) and be able to move forward to go backwards (behavior). Each class can contain **methods** which correspond to behaviors (i.e. move forward). Classes also define **fields**, which can be used to store the state of objects of its type once instantiated.
 
 Here is an example **Person.java**
