@@ -14,8 +14,25 @@ space complexity: O(N)
 
 ### Singly Linked List
 
+| Operation | Time Complexity (worst) |
+|-----------|-------------------------|
+| index     | O(N)                    |
+| printList | O(N)                    |
+| insertion | O(1)                    |
+| deletion  | O(1)                    |
+| search    | O(N)                    |
+space complexity: O(N)
 
 ### Doubly Linked List
+
+| Operation | Time Complexity (worst) |
+|-----------|-------------------------|
+| index     | O(N)                    |
+| printList | O(N)                    |
+| insertion | O(1)                    |
+| deletion  | O(1)                    |
+| search    | O(N)                    |
+space complexity: O(N)
 
 ## Stacks (LIFO)
 
