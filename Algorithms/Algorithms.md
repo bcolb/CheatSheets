@@ -37,7 +37,7 @@ else
 The running time of an if/else statement is never more than the running time of the test plus the larger of the running times of S1 and S2.
 
 **LogN Running Time**
-> An algorithm is O(logN) if it takes contant (O(1)) time to cut the problem size by a faction (which is usually 1/2).
+> An algorithm is O(logN) if it takes constant (O(1)) time to cut the problem size by a fraction (which is usually 1/2).
 
 Ex. Binary Search
 
