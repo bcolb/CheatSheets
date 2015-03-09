@@ -89,7 +89,7 @@ st.push("Hello");
 Queues are lists (like stacks) with insertion being done at one end and deletion being done at the other (FIFO - First In, Last Out).
 
 **Operations**
-* enqueue - inserts and element at the end of the list (the rear).
+* enqueue - inserts an element at the end of the list (the rear).
 * dequeue - deletes and returns the element at the start of the list (the front).
 
 | Operation | Time Complexity |
