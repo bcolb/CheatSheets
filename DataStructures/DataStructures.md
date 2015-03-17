@@ -150,6 +150,68 @@ A splay tree is a binary search tree that uses splaying to reduce the time compl
 ### B-Tree
 A B-tree uses more than two branches, or subtrees in order to reduce the overall depth of the search tree. This can be useful in certain applications as it decreases the number of disk accesses necessary to perform a search.
 
+### Java Implementations
+```java
+import java.util.TreeMap;
+import java.util.TreeSet;
+```
+
+```java
+// TreeSet - Collection of unique values, O(LogN) for most operations
+TreeSet<String> strings = new TreeSet<String>();
+strings.add("Hello");
+strings.add("World");
+strings.contains("Hello"); // will return true
+strings.remove("World");
+
+// TreeMap - Key/Value pairs, O(LogN) for most operations
+TreeMap<String, Integer> stringCounts = new TreeMap<String, Integer>();
+stringCounts.put("Hello", 1);
+stringCounts.get("Hellow");
+stringCounts.put("World", 1);
+stringCounts.remove("Hello");
+stringCounts.containsKey("Hello"); // will return false
+```
+
+## Hash Tables/Maps
+A hash table is a data structure that supports insertions, deletions, and searchs in constant average time.
+
+Note: Hash Tables only support a subset of the operations allowed by search trees.
+
+**Hash Function**: Maps data of an arbitrary size to data of a fixed size. In Hash Tables that data is used as a key in a key/value pair. When two pieces of data map to the same fixed size data, that is known as a collision.
+
+**Collision Strategies**
+
+* **Separate Chaining**: Keep a list of all elements that hash to the same value. (load factor approx. 1.0)
+* **Linear Probing**:  Try alternative cells, in sequence, until an empty cell is found. (load factor approx. 0.5)
+* **Quadratic Probing**: Try alternative cells using i^2 for the next cell. (load factor must be under 0.5)
+* **Double Hashing**: Similar to linear probing but makes use of a second hash function.
+
+**Note**: Probing hash tables require lazy deletion. Lineary probing is subject to primary clustering and quadratic probing is subject to secondary clustering.
+
+**Rehashing**: The process of resizing the hash table when the load factor becomes high, an insertion fails, or when the table is half full. It is done by creating a new table roughly double the size of the original (keep it prime), computing the hash function for each value in the old table and placing it in the new table.
+
+### Java Examples
+```java
+import java.util.HashMap; // uses separate chaining
+import java.util.HashSet; // uses separate chaining
+import java.util.HashTable;
+```
+```java
+// HashMap
+HashMap<String, Integer> hm = new HashMap<String, Integer>();
+hm.put("Hello", 1);
+hm.containsKey("Hello"); // returns true
+hm.get("Hello"); // returns 1
+
+// HashSet
+HashSet<String> hs = new HashSet<String>();
+hs.add("Hello");
+hs.add("World!");
+hs.contains("World!"); // returns true
+hs.remove("Hello");
+```
+
 ## Resources
 
 1. [Data Structures And Algorithm Analysis in Java 3rd Edition by Mark Allen Weiss](http://www.amazon.com/Data-Structures-Algorithm-Analysis-Java/dp/0132576279/ref=sr_1_1?ie=UTF8&qid=1425517283&sr=8-1&keywords=Data+Structures+and+Algorithms+analysis+in+java+mark+allen)
