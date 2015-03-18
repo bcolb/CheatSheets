@@ -191,6 +191,15 @@ Note: Hash Tables only support a subset of the operations allowed by search tree
 
 **Rehashing**: The process of resizing the hash table when the load factor becomes high, an insertion fails, or when the table is half full. It is done by creating a new table roughly double the size of the original (keep it prime), computing the hash function for each value in the old table and placing it in the new table.
 
+**Perfect Hashing**: A method of hashing such that we obtain a worst-case runtime of O(1).
+
+**Other Approachs to Collisions**:
+
+* Cuckoo Hashing
+* Hopscotch Hashing
+* Universal Hashing
+* Extendible Hashing (Sensitivity to disk accesses - data does not fit in main memory)
+
 ### Java Examples
 ```java
 import java.util.HashMap; // uses separate chaining
