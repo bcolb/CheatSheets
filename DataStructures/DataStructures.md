@@ -221,6 +221,13 @@ hs.contains("World!"); // returns true
 hs.remove("Hello");
 ```
 
+## Priority Queues (Heaps)
+An elegant data structure that organizes elements into a queue based of a priority. Useful in greedy algorithms as well as operating system schedulers.
+
+**Common Operations**
+* insert (enqueue)
+* deleteMin (dequeue)
+
 ## Resources
 
 1. [Data Structures And Algorithm Analysis in Java 3rd Edition by Mark Allen Weiss](http://www.amazon.com/Data-Structures-Algorithm-Analysis-Java/dp/0132576279/ref=sr_1_1?ie=UTF8&qid=1425517283&sr=8-1&keywords=Data+Structures+and+Algorithms+analysis+in+java+mark+allen)
