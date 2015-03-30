@@ -221,12 +221,46 @@ hs.contains("World!"); // returns true
 hs.remove("Hello");
 ```
 
-## Priority Queues (Heaps)
+## Priority Queue (Binary Heap)
 An elegant data structure that organizes elements into a queue based of a priority. Useful in greedy algorithms as well as operating system schedulers.
 
 **Common Operations**
 * insert (enqueue)
 * deleteMin (dequeue)
+
+**Time Complexity**
+
+| Operation   | Time Complexity |
+|-------------|-----------------|
+| insertion   | O(logN)         |
+| deleteMin   | O(logN)         |
+| decreaseKey | O(logN)         |
+| increaseKey | O(logN)         |
+| delete      | O(logN)         |
+| buildHeap   | O(N)            |
+
+**Implementation**
+
+Values can be stored in an array. Insert is done by starting at the next spot in the heap and percolating up until the correct location is found.
+
+DeleteMin is done by percolating down, creating a hole where the min was (root), then trying to fill the hole either with the last element or with the next min value until the last element finds a home.
+
+### Java Example
+
+```java
+import java.util.PriorityQueue;
+```
+```java
+// Priority Queue - Note use PriorityBlockQueue for thread safe operations
+PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+pq.add(12);
+pq.add(17);
+pq.add(3);
+pq.add(5);
+pq.add(99);
+Integer min = pq.peek();
+pq.remove(min);
+```
 
 ## Resources
 
