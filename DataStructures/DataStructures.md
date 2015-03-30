@@ -251,7 +251,7 @@ DeleteMin is done by percolating down, creating a hole where the min was (root),
 import java.util.PriorityQueue;
 ```
 ```java
-// Priority Queue - Note use PriorityBlockQueue for thread safe operations
+// Priority Queue - Note use PriorityBlockingQueue for thread safe operations
 PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
 pq.add(12);
 pq.add(17);
