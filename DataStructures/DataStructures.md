@@ -122,7 +122,7 @@ A tree is a collection of N nodes, one of which is the root, and N-1 edges.
 * Grandchild - child of a child
 * Path - a sequence of nodes such that n(i) is the parent of n(i+1). The length is the number of edges on the path. In a tree there is exactly one path from the root to each node.
 * Depth - the depth of a node is the length of the unique path fromo the root to the node.
-* Height - The height of a node is the length of the longpest path from the node to a leaf - with all leaves are at height 0. The height of a tree is the height of its root.
+* Height - The height of a node is the length of the longest path from that node to a leaf.
 * Ancestor/Descendant - if there is a path from node 1 to node 2, node 1 is an ancestor or node 2, and node 2 is a decendant of node 1. If they are not equal then they are proper ancestors/descendants.
 
 **Uses**
