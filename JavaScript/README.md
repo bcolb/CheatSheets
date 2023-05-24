@@ -48,39 +48,27 @@ Additionally, JavaScript features the 'Object' DataType.
 // Strings
 let name = "Brice"
 let sentence = "This is just a sentence."
-```
 
-```
 // Numbers
 let a_good_number = 42;
 let another_good_number = 7;
 let a_pi = 3.14;
-```
 
-```
 // Bigint
 let x = BigInt("8372032582392352345239385232346097670922468")
-```
 
-```
 // Booleans
 let awake = True;
 let am_sleeping = False;
-```
 
-```
 // undefined
 let not_a_function = undefined
-```
 
-```
 // symbol
 const sym = Symbol("foo");
-```
 
-```
 // Null
-let to_be_named = Null
+let to_be_named = null
 ```
 
 ### Object Examples
@@ -95,6 +83,128 @@ const colors = ["yellow", "red", "blue"]
 const dog = {name:"Lassie", breed:"Rough Collie", sex:"female"}
 ```
 
+## Var, Let, and Const
 
+Variables in javascript are defined with the ```var``` keyword. 
 
+```
+var x = 'x';
+var name = 'cheatsheet';
+```
+Let is used to declare a variable that is block scoped, meaning they have scope in the block they are declared and in any sub blocks.
 
+```
+let n = 12;
+```
+
+the ```const``` keyword can be used to create a block-scoped constant. This is similar to the scoping of let but a const variable can't be changed through reassignment.
+
+```
+const number = 7;
+```
+
+## Control Flow
+
+Javascript control flow is used with if/else statements.
+
+```
+const fundamental_truth = true;
+
+var result = null;
+
+if (fundamental_truth) {
+    result = "the_truth";
+} else {
+    result = "a lie";
+}
+```
+
+Switch statement
+
+```
+var x = 2;
+var y = null;
+
+switch (x) {
+    case 1:
+    y = "one";
+    break;
+    case 2:
+    y = "two";
+break;
+default:
+console.log("no case found");
+}
+```
+
+For loops
+
+```
+var result = ""
+
+for (var count = 0; count < 144; count++) {
+    result += "Around the world, around the word\n";    
+}
+console.log(result);
+```
+
+While loops
+
+```
+var is_it_over = false;
+while (!is_it_over) {
+    console.log("it's not over yet");
+    is_it_over = true;
+}
+console.log("now it's over");
+```
+
+## Functions and Prototypes
+
+```
+function say_hi (name) {
+    return "Hello, " + name + "!";
+}
+console.log(say_hi("Jack"));
+```
+
+Objects can be made from functions.
+
+```
+function Dog(breed, color, age) {
+    this.breed = breed;
+    this.color = color;
+    this.age = age;
+    this.bark = function () {
+        if (this.breed == 'Pomeranian') {
+            return "Yip!";
+        } else {
+            return "Bark!";
+        }
+    }
+}
+var mydog = new Dog("lab", "yellow", 4);
+console.log(mydog.bark());
+```
+
+Prototypes.
+
+```
+Dog.prototype.name = "Dog";
+Dog.prototype.getName = function() {
+    return this.name;
+}
+console.log(mydog.getName());
+```
+
+Note the abovef example returns 'Dog' for my dog as the prototype added name to all dog objects.
+
+Self-executing functions - run immediatlely after invocation.
+
+```
+(function () {
+    const fundamental_truth = true;
+    var program_name = "truthteller";
+    console.log(program_name);
+})();
+```
