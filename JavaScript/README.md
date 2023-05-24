@@ -208,3 +208,81 @@ Self-executing functions - run immediatlely after invocation.
     console.log(program_name);
 })();
 ```
+
+## Working with HTML
+
+APIs for working with nodes in an HTML doc
+- ```document.getElementById(id);```
+- ```document.getElementsByTagName(name);```
+- ```document.createElement(Name);```
+- ```parentNode.appendChild(node);```
+
+This functionality is greatly extended withy [jQuery](https://jquery.com/).
+
+```
+// get all links on a page
+var linkSet = document.getElementsByTagName("a");
+var links = [];
+for (var i = 0; i < linkSet.length; i++) {
+    links.push(linkSet[i].href);
+}
+console.log(links);
+```
+
+Adding nodes to a page.
+
+```
+<html>
+  <head>
+    <script>
+      function addHelloWorld() {
+        var newP = document.createElement("p");
+        var newHello = document.createTextNode("Hello world!");
+        newP.appendChild(newHello);
+        document.body.appendChild(newP);
+      }
+    </script>
+  </head>
+  <body onload="addHelloWorld()">
+  </body>
+</html>
+```
+
+Modifying content.
+- ```element.innerHTML```
+    - retrieves or sets content of an HTML element
+- ```element.style```
+    - retrieve or set style
+    - overrides CSS style
+
+Modifying attributes
+- ```element.setAttribute(attrName, attrValue);```
+- ```element.removeAttribute(attrName);```
+- ```element.getAttribute(attrName);```
+
+Events
+- Open a new browser window
+    - ```window.open(url, name, [features, replace]);```
+        - returns a reference to the new window object
+- Start a function after the page is loaded
+    - ```window.onload```
+- Write a message to the console
+    - ```window.dump("text");```
+- Scroll the browser to a spot on a page
+    - ```window.scrollTo(x, y);```
+
+Using OnLoad
+
+```
+// Run a function onload
+onload = (function () {
+    alert("Ran on page load");
+})();
+```
+
+```
+// Here's the commonly used jQuery version
+$( document ).read(function() {
+    alert("jQuery ran on document ready");
+});
+```
