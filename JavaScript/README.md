@@ -97,7 +97,7 @@ Let is used to declare a variable that is block scoped, meaning they have scope 
 let n = 12;
 ```
 
-the ```const``` keyword can be used to create a block-scoped constant. This is similar to the scoping of let but a const variable can't be changed through reassignment.
+The ```const``` keyword can be used to create a block-scoped constant. This is similar to the scoping of let but a const variable can't be changed through reassignment.
 
 ```
 const number = 7;
@@ -168,7 +168,9 @@ function say_hi (name) {
 console.log(say_hi("Jack"));
 ```
 
-ES6 allows for arrow functions.
+### Arrow functions
+
+Allowed with ES6.
 
 ```
 const say_hi = (name)=> console.log("Hello " + name + "!");
@@ -193,7 +195,7 @@ var mydog = new Dog("lab", "yellow", 4);
 console.log(mydog.bark());
 ```
 
-Prototypes
+### Prototypes
 
 ```
 Dog.prototype.name = "Dog";
@@ -206,9 +208,9 @@ console.log(mydog.getName());
 Note the abovef example returns 'Dog' for my dog as the prototype added name to all dog objects.
 
 
-Class
-- introduced with ES6
-- can have a constructor
+### Class 
+
+Introduced with ES6, can have a constructor, and allows for object oriented programming.
 
 ```
 class Dog {
@@ -225,6 +227,7 @@ let theDog = new Dog("Lassie", "Rough Collie");
 ```
 
 Class Inheritance
+
 ```
 class BlackLab extends Dog {
     constructor(name) {
