@@ -159,13 +159,19 @@ while (!is_it_over) {
 console.log("now it's over");
 ```
 
-## Functions and Prototypes
+## Functions, Prototypes,  and Classes
 
 ```
 function say_hi (name) {
     return "Hello, " + name + "!";
 }
 console.log(say_hi("Jack"));
+```
+
+ES6 allows for arrow functions.
+
+```
+const say_hi = (name)=> console.log("Hello " + name + "!");
 ```
 
 Objects can be made from functions.
@@ -187,7 +193,7 @@ var mydog = new Dog("lab", "yellow", 4);
 console.log(mydog.bark());
 ```
 
-Prototypes.
+Prototypes
 
 ```
 Dog.prototype.name = "Dog";
@@ -199,6 +205,36 @@ console.log(mydog.getName());
 
 Note the abovef example returns 'Dog' for my dog as the prototype added name to all dog objects.
 
+
+Class
+- introduced with ES6
+- can have a constructor
+
+```
+class Dog {
+    constructor(name, breed) {
+        this.name = name;
+        this.breed = breed;
+        console.log("Dog created");
+        console.log("Name: " + this.name);
+        console.log("Breed: " + this.breed);
+    }
+};
+
+let theDog = new Dog("Lassie", "Rough Collie");
+```
+
+Class Inheritance
+```
+class BlackLab extends Dog {
+    constructor(name) {
+        super(name, "Black Lab");
+    }
+};
+
+let oldDog = new BlackLab("Charlie");
+```
+
 Self-executing functions - run immediatlely after invocation.
 
 ```
@@ -208,6 +244,31 @@ Self-executing functions - run immediatlely after invocation.
     console.log(program_name);
 })();
 ```
+
+## Promise
+
+Starting with ES6 a JavaScript promise represents the eventual completion of an asynchronous operation and its return value.
+
+Promises have state:
+- pending - when it is invoked
+- fulfilled - when it completes
+- rejected - when it fails
+
+```
+let thePromise = ((resolve, reject) => {
+    setTimeout(() => {
+        let currTime = new Date().getTime();
+        if(currTime % 2 === 0) {
+            resolve("Success!")
+        } else {
+            reject("Failed!!")
+        }
+    }, 4000)
+})
+
+let newPromise = new Promise(thePromise);
+```
+
 
 ## Working with HTML
 
