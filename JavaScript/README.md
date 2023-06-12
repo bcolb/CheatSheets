@@ -272,6 +272,16 @@ let thePromise = ((resolve, reject) => {
 let newPromise = new Promise(thePromise);
 ```
 
+Another promise example:
+
+```
+let promise = new Promise( (resolve, reject) => {
+	setTimeout(() => {
+			resolve("bcolb!");
+	}, 1000)
+});
+```
+
 
 ## Working with HTML
 
