@@ -139,7 +139,7 @@ Modify an element
 
 ```let third = a[2]```
 
-Use a vec instead of an array if the size of the number of elements needs to change.
+Use a vec instead of an array if the size of the number of elements needs to change, as arrays are fixed size immutable and vectors are dynamic mutable.
 
 ### Slice
 
@@ -394,3 +394,119 @@ compute_instance.run_job(2);
 ```
 
 Can define a constructor method with the 'new' keyword.
+
+## Ownership
+
+Ownership is how Rust manages memory allocation and deallocation.
+
+Ownership rules in Rust:
+- Each value in rust has an owner
+- There can only be one owner at a time
+- When the owner goes out of scope, the value will be dropped
+
+## Borrowing
+
+Borrwing doesn't require cloning, can pass a reference to a function (comparable to a pointer but checked by compiler).
+
+Rust ensures you can't have a reference to an invalid space in memory.
+
+```
+fn name() -> & String {
+    let n = String::from("bcolb");
+    &n
+}
+
+fn main() {
+    let the_name = name();
+}
+```
+
+Rust makes sure references are always valid. In general, having functions borrow values rather than take ownership is more idiomatic.
+
+## Slices
+
+A slice is a data type that always borrows data owned by some other structure; consists of a pointer and a link.
+
+```
+let s_slice = &s[2..4]
+```
+
+Can create from strings, arrays, and vectors.
+
+```
+let var = [0.00, 1.23, 4.56, 5.71];
+let var_slice = &var[..1];
+```
+
+Can make it mutable too.
+
+```
+let mut v = vec![10, 20, 30, 40];
+v.push(50);
+let v_slice = &v[1..2];
+```
+
+The borrow checker makes sure that slices are always valid.
+
+Slice indices are checked at runtime if they can't be checked at compile time.
+
+Arrays, vectors, slices.
+
+Rust feature 'deref' converts a reference to a string to a string slice.
+
+## Mutable Borrowing
+
+
+```
+let mut x = 5;
+
+fn increment(val: &mut u32){
+    val += 1;
+}
+```
+
+## Borrowing Code Patterns
+
+  - New Scopes
+  - Temporary variables
+  - Entry API
+  - Splitting up structs
+
+## Borrowing beyond memory
+
+### Sockets
+
+Sockets are system resource that are a connection to a network endpoint for sending and receiving data.
+
+TCP - Transmission Control Protocol (underlies much of the internets traficc)
+- Bind to a port
+- Close when done
+
+Memory vs Sockets: Similarities
+
+Memory
+- use after free
+- Double Free
+- Memory leaks
+- Mitigated with garbage colelction
+- Mitigated with ownership
+
+Sockets
+- user after close
+- Closing twice
+- Socket Leaks
+- Not mitigated with garbage collection
+- Mitigated with ownership
+
+### Other Borrowing
+
+- Mutex<T> (Mutual Exclusion): only let one thread at a time change the inner value
+  - Lock is automatically released once owner goes out of scope
+- Rc<T> (Reference Counted) Allows for multiple owners to a reference
+  - Keeps track of owner count and cleans up once the last owner goes out of scope
+- Files - close when done using when owner goes out of scope
+- Custom Types - use the Drop trait
+  - One method: drop
+  - drop takes &mut self
+
+
