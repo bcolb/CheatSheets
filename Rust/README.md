@@ -509,4 +509,36 @@ Sockets
   - One method: drop
   - drop takes &mut self
 
+## Panicking
+
+Panicking causes a thread to stop processing immediately. 
+
+```
+panic!("I'm panicking!");
+```
+
+When to panic?
+- Would it be correct to continue?
+- Out of bounds memory access
+- No way for calling code to recover
+- When problem must be fixed in code
+- Failure isn't expected to happen occassionally
+
+For when a condition/state should not be able to happen.
+```
+unreachable!();
+```
+
+For code we intend to write but haven't gotten to yet.
+```
+unimplemented!();
+```
+
+Assert panics if a given condition isn't true. (assert!, assert_eq!, assert_ne!)
+Check preconditions, and/or in tests
+```
+let x = False;
+assert!(x);
+```
+
 
