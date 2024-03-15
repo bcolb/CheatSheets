@@ -649,3 +649,41 @@ Result type alias.
 ```
 pub type Result<T> = result::Result<T, ExampleServiceError>;
 ```
+
+### Error Crates
+
+Examples:
+- quick-error
+- error-chain
+- failure
+
+In cargo.toml
+```
+[dependencies]
+quick-error = "1.2.2"
+```
+
+```
+#[macro_use]
+extern crate qu;ick_error;
+
+quick_error! {
+    // code goes here
+}
+```
+
+### Result & Option
+
+Both have different variants
+
+Result: is_ok, is_err
+Option: is_some, is_none
+
+You can covert a Result into an Option or an Option into a Result.
+
+Fallback values with unwrap_or and unwrap_or_default.
+
+Can also transform values within Ok or Some with the 'map' method.
+
+
+
