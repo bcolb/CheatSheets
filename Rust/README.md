@@ -509,7 +509,9 @@ Sockets
   - One method: drop
   - drop takes &mut self
 
-## Panicking
+## Panicking & Error Handling
+
+### Panicking
 
 Panicking causes a thread to stop processing immediately. 
 
@@ -541,4 +543,109 @@ let x = False;
 assert!(x);
 ```
 
+### Result & Option
 
+Result is an enum in the standard library with two variants (ok w/ value, or err w/ value about what went wrong).
+
+```
+Ok
+Err
+```
+
+Can also turn a recoverable error into an unrecoverable error.
+```
+match item {
+    Ok(field) => field,
+    Err(_) => panic!("Panicking!"),
+};
+```
+
+### Return Result and the ? operator
+
+The ```?``` operator is used to replace the match expression for Ok and Err.
+
+Note: try! used to do the same thing that the ```?``` operator does now.
+
+```
+let result = match name_of_function(text) {
+    Ok(rec) =>,
+    Err(e) => return Err(e),
+}
+```
+
+becomes:
+
+```
+let result = name_of_function(text)?;
+```
+
+The ```?``` operator can be used:
+- an Option<T> values
+- in main
+- in tests
+
+### Why error handling in Rust works
+
+Seperates bugs from recoverable errors
+- Bugs fail loudly
+- Recoverable errors know about possibility of errors
+
+Panic is for unrecoverable errors or programmer bugs
+Results are bad states that the program might be able to recover from (could be from the user)
+
+Example of expect:
+
+```
+let num: i32 = "10".parse().expect("Parsing Failed");
+```
+
+if it doesn't equal 10 it panics with "Parsing Failed".
+
+### Custom Error Types
+
+What happens when you have multiple error types that may be returned?
+
+```
+Box<Error> or Box<dyn Error>
+```
+
+Box<Error> is the simplest solution to the multiple error type issue. The main downside is you can't inspect the error type in the code then after catching it.
+
+Custom error types
+- Commonly an enum
+- Allows callers to use a match expression
+
+```
+#[derive(Debug)]
+pub enum CustomErrorName{
+    Failure1,
+    Failure2,
+}
+
+impl Error for CustomErrorName {
+    // Can be empty for Rust newer than version 1.27
+    fn description(&self) -> &str {
+        use CustomErrorName::*;
+        match *self {
+            Failure1 => "the first reason for failure",
+            Failure2(_) => "The second reason for failure",
+        }
+    }
+}
+```
+
+Implement the From trait for converting between types.
+
+```
+impl From<io::Error> for ExampleServiceError {
+    fn from (other: io::Error) -> Self {
+        ExampleServiceError::Io(other)
+    }
+}
+```
+
+Result type alias.
+
+```
+pub type Result<T> = result::Result<T, ExampleServiceError>;
+```
